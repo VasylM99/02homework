@@ -1,11 +1,20 @@
 let numberN = parseFloat(prompt('Задайте число N'));
-let numberM = parseFloat(prompt('Задайте число M'));
+do {
+    numberN = parseFloat(prompt('Задайте число N'));
+} while (isNaN(numberN) || (numberN%1!== 0)) {
+    console.log('numberN: ', numberN);
+};
 
-if (isNaN(numberN) || isNaN(numberM) || (numberN%1!== 0) || (numberM%1!== 0)  ) {
-    console.log('You need to enter a number!');
-    alert ('You need to enter a number');
-} else{
-    let parity = confirm('Пропускать четные числа?');
+let numberM = parseFloat(prompt('Задайте число M'));
+do{
+    numberM = parseFloat(prompt('Задайте число M'));
+} while (isNaN(numberM) || (numberM%1!== 0)) {
+    console.log('numberM: ', numberM);
+};
+
+
+
+let parity = confirm('Пропускать четные числа?');
     
     let sum = 0;
     if (parity) {
@@ -23,4 +32,3 @@ if (isNaN(numberN) || isNaN(numberM) || (numberN%1!== 0) || (numberM%1!== 0)  ) 
         }
     console.log('sum', sum);
     }
-}
